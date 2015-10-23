@@ -4,6 +4,8 @@ puts-step "Installing dependencies with pip"
 [ ! "$FRESH_PYTHON" ] && bpwatch start pip_install
 [ "$FRESH_PYTHON" ] && bpwatch start pip_install_first
 
+export PYTHONPATH="/app/.heroku/python/lib/python3.4/site-packages:/app/.heroku/miniconda/envs/condaenv/lib/python3.4/site-packages:"
+
 /app/.heroku/python/bin/pip install -r requirements.txt --exists-action=w --src=./.heroku/src --allow-all-external --disable-pip-version-check --no-cache-dir | cleanup | indent
 
 # Smart Requirements handling
