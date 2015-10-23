@@ -179,6 +179,7 @@ source $BIN_DIR/steps/cryptography
 source $BIN_DIR/steps/gdal
 
 # Install dependencies with Pip.
+export PYTHONPATH="/app/.heroku/python/lib/python3.4/site-packages:/app/.heroku/miniconda/envs/condaenv/lib/python3.4/site-packages:$PYTHONPATH"
 source $BIN_DIR/steps/pip-install
 
 # Django collectstatic support.
